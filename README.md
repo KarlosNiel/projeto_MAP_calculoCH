@@ -8,6 +8,7 @@ Automatizar o processo de cálculo da carga horária de disciplinas com base em 
 
 ## 🧩 Estrutura do Projeto
 
+```
 projeto_map/
 ├── config/ # Configurações do Django
 ├── sistema_ch/ # Aplicação principal de cálculo de CH
@@ -19,7 +20,7 @@ projeto_map/
 │ ├── signals.py # Sinais conectados aos modelos
 ├── manage.py # Utilitário do Django
 ├── requirements.txt # Dependências do projeto
-
+```
 
 ## ⚙️ Funcionalidades
 
