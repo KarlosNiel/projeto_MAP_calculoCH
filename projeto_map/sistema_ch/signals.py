@@ -11,7 +11,7 @@ def handle_submission_review(sender, instance, created, **kwargs):
 
         strategy = get_strategy(instance)
         if not strategy:
-            return  # opcional: logar ou avisar
+            return 
 
         horas_a_adicionar = strategy.calculate_ch(instance)
 
@@ -19,8 +19,7 @@ def handle_submission_review(sender, instance, created, **kwargs):
 
         updated_fields = {
             'contabilization': sucesso,
+            'reviewed_at': timezone.now(),
         }
-        if instance.reviewed_at is None:
-            updated_fields['reviewed_at'] = timezone.now()
 
         ActivitySubmission.objects.filter(pk=instance.pk).update(**updated_fields)

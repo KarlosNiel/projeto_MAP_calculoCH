@@ -2,8 +2,6 @@ from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import User
 
-
-
 class ActivitySubmission(models.Model):
     TYPE_CHOICES = [
         ('WORKSHOP', 'Workshop'),
@@ -46,10 +44,15 @@ class Profile(models.Model):
         
         nova_soma = self.accumulated_hours + hours
         if nova_soma > HOURS_LIMIT:
+            horas_validas = HOURS_LIMIT - self.accumulated_hours
             self.accumulated_hours = HOURS_LIMIT
             self.save()
-            return False, f"Não é possível adicionar todas as {hours} horas. Limite máximo é {HOURS_LIMIT} horas. vamos contabilizar até a quantidade válida de horas: {HOURS_LIMIT - self.accumulated_hours} horas."
+            if horas_validas <= 0:
+                return False, f"Não é possível adicionar {hours} horas. Limite máximo de {HOURS_LIMIT} horas foi atingido."
+            else:
+                return False, f"Não é possível adicionar todas as {hours} horas. Limite máximo de {HOURS_LIMIT} horas foi ultrapassado. vamos contabilizar até a quantidade válida de horas: {horas_validas} horas."
         else:
             self.accumulated_hours = nova_soma
             self.save()
             return True, f"{hours} horas adicionadas com sucesso. Total: {self.accumulated_hours} horas."
+
