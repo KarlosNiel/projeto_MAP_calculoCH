@@ -4,6 +4,10 @@
 
 {% block title %}Login{% endblock %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+{% endblock %}
+
 {% block page_header %}
 <section class="bg-title text-white text-center py-5 d-flex align-items-center justify-content-center flex-column">
     <h1 class="fw-bold fs-0">FAZER LOGIN</h1>
@@ -39,7 +43,10 @@
                 {{ form|crispy }}
 
                 <div class="d-grid mt-3">
-                    <button type="submit" class="btn btn-primary">Entrar</button>
+                    <button type="submit" class="btn btn-primary" aria-label="Entrar na área do aluno">
+                        Entrar
+                    </button>
+
                 </div>
             </form>
 

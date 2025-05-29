@@ -1,0 +1,149 @@
+:root {
+  --bs-primary: #000c49;
+  --bs-secondary: #ee7d14;
+  --btn-gray: #eeeeee;
+  --btn-blue: #000c49;
+}
+
+.text-primary {
+  color: var(--bs-primary) !important;
+}
+
+.text-secondary {
+  color: var(--bs-secondary) !important;
+}
+
+.border-primary {
+  border-color: var(--bs-primary) !important;
+}
+
+.btn-secondary {
+  background-color: var(--bs-secondary) !important;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--btn-blue) !important;
+  border: none;
+}
+
+.bg-orange {
+  background-color: var(--bs-secondary);
+}
+
+.bg-transparent-to-orange {
+  background: transparent;
+}
+
+.bg-transparent-to-orange:hover {
+  background: var(--bs-secondary);
+  transition: transform 0.3s;
+}
+
+body {
+  font-family: inter;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  max-height: 2.2rem;
+}
+
+.bg-title {
+  background-image: url(../assets/bg-title-index.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 432px;
+}
+
+.btn-gray {
+  background-color: var(--btn-gray);
+}
+
+.navbar-list-orange li a:hover {
+  color: var(--bs-secondary);
+}
+
+.links-list-orange li {
+  transition: transform 0.3s;
+}
+
+.links-list-orange li:hover {
+  transform: translateX(5px);
+  color: var(--bs-secondary);
+}
+
+.btn-facebook:hover {
+  color: #3b5998;
+  cursor: pointer;
+}
+.btn-twitter-x:hover {
+  color: #3b3434;
+  cursor: pointer;
+}
+.btn-instagram:hover {
+  color: #e4405f;
+  cursor: pointer;
+}
+.btn-youtube:hover {
+  color: #cd201f;
+  cursor: pointer;
+}
+.btn-discord:hover {
+  color: #7289da;
+  cursor: pointer;
+}
+
+.btn-white-bg-orange:hover {
+  color: #fff;
+  background-color: var(--bs-secondary);
+}
+
+.btn-list-white-bg-orange li:hover {
+  color: #fff;
+  background-color: var(--bs-secondary);
+}
+
+.polygon-curso {
+  background-color: var(--bs-secondary);
+  color: #ffffff;
+  display: inline-block;
+  padding: 0.5rem 1.5rem;
+  clip-path: polygon(100% 0%, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+}
+
+.btn-expand {
+  transition: transform 0.3s ease-in-out;
+}
+
+.btn-expand:hover {
+  transform: scale(1.1); /* Aumenta 10% do tamanho original */
+}
+
+[data-bs-theme="dark"] {
+  --bs-primary: #ffffff;
+
+  body {
+    background-color: #181a1b;
+  }
+  .bg-light {
+    background-color: #1b1e1f !important;
+  }
+
+  .btn-gray {
+    background-color: #222426;
+  }
+
+  .bg-white {
+    background-color: #181a1b !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .fs-0 {
+    font-size: 3.5rem;
+  }
+}

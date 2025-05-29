@@ -1,0 +1,99 @@
+/* === LAYOUT GERAL === */
+body {
+  background-color: #f8f9fa; /* cor de fundo suave */
+}
+
+.card {
+  border-radius: 0.5rem;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+/* === TIPOGRAFIA === */
+#atividadesIntroTitle,
+#utilsTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.text-muted {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* === BOTÕES === */
+.btn-primary {
+  background-color: #001f5b;
+  border-color: #001f5b;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #002c7b;
+  border-color: #002c7b;
+  box-shadow: 0 0 0 0.25rem rgba(0, 31, 91, 0.25);
+}
+
+.btn-outline-secondary {
+  color: #6c757d;
+  border-color: #6c757d;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-outline-secondary:hover {
+  color: #fff;
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+/* === UTILIDADES (DIREITA) === */
+.utilities .card {
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.utilities .list-group-item {
+  padding: 0.75rem 1rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.utilities .list-group-item:hover {
+  background-color: #f0f0f0;
+}
+
+.utilities a {
+  color: #001f5b;
+  transition: color 0.2s;
+}
+
+.utilities a:hover,
+.utilities a:focus {
+  color: #003580;
+  text-decoration: underline;
+}
+
+/* === ACESSIBILIDADE === */
+a:focus,
+button:focus {
+  outline: 2px dashed #001f5b;
+  outline-offset: 3px;
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 768px) {
+  #atividadesIntroTitle,
+  #utilsTitle {
+    font-size: 1.25rem;
+  }
+
+  .btn {
+    font-size: 1rem;
+  }
+
+  .utilities .list-group-item {
+    font-size: 0.95rem;
+  }
+}

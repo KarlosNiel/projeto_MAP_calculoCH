@@ -1,0 +1,79 @@
+/* === LAYOUT DO CARTÃO === */
+.card {
+  border-radius: 0.75rem;
+  padding: 2rem;
+  background-color: #ffffff;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.04);
+}
+
+/* === TÍTULO === */
+#loginTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* === ALERTAS === */
+.alert {
+  font-size: 0.95rem;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.alert i {
+  vertical-align: middle;
+}
+
+/* === FORMULÁRIO === */
+form input:focus,
+form select:focus {
+  border-color: #001f5b;
+  box-shadow: 0 0 0 0.2rem rgba(0, 31, 91, 0.2);
+}
+
+button[type="submit"] {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* === LINK DE AJUDA === */
+#loginHelp {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+#loginHelp a {
+  color: #001f5b;
+  transition: color 0.2s ease;
+}
+
+#loginHelp a:hover,
+#loginHelp a:focus {
+  color: #003580;
+  text-decoration: underline;
+}
+
+/* === ACESSIBILIDADE === */
+:focus {
+  outline: 2px dashed #001f5b;
+  outline-offset: 3px;
+}
+
+/* === RESPONSIVIDADE === */
+@media (max-width: 576px) {
+  .card {
+    padding: 1.5rem 1rem;
+  }
+
+  #loginTitle {
+    font-size: 1.125rem;
+  }
+
+  button[type="submit"] {
+    font-size: 1rem;
+  }
+}
