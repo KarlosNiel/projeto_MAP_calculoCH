@@ -1,0 +1,170 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br" data-bs-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}ADS{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-XxCtbpMTxXWqE+e6Z9J7dZ+Nk/IVTyYYAvAZ9xrzjIP2gCq5OYMi+65sLsVA1Uq/3FakA0+YSpc8Yjv5Ckh+Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {% block extra_css %}{% endblock %}
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar m-0 p-0 pb-1">
+            <section class="container-fluid pb-3 pt-3 shadow-sm">
+                <div class="container-fluid d-flex justify-content-between align-items-center w-75">
+                    <!--Logo-->
+                    <a class="navbar-brand d-flex align-items-center" href="index.html">
+                        <img src="{% static 'assets/logo.png' %}" alt="Logo do site" class="img-fluid logo">
+                        <span class="fw-bold ms-1">ADS</span>
+                    </a>
+
+                    <!--Redes Sociais-->
+                    <ul class="navbar-nav bg-white flex-row gap-4 me-lg-4 d-flex align-items-center d-none d-sm-flex btn-list-orange">
+                        <li class="nav-item">
+                            <i class="bi bi-facebook btn-facebook fs-5"></i>
+                        </li>
+                        <li class="nav-item">
+                            <i class="bi bi-twitter-x btn-twitter-x fs-5"></i>
+                        </li>
+                        <li class="nav-item">
+                            <i class="bi bi-instagram btn-instagram fs-5"></i>
+                        </li>
+                        <li class="nav-item">
+                            <i class="bi bi-youtube btn-youtube fs-5"></i>
+                        </li>
+                        <li class="nav-item">
+                            <i class="bi bi-discord btn-discord fs-5"></i>
+                        </li>
+                    </ul>
+
+                    <div class="d-flex justify-content-between gap-3">
+                        <!--Dark mode button-->
+                        <button class="btn btn-gray btn-white-bg-orange" id="themeToggle">
+                            <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+                        </button>
+
+                        <!--sandwich button nav-->
+                        <button class="navbar-toggler btn-gray d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavContent" aria-controls="navbarNavContent" aria-expanded="false" aria-label="Alternar navegação">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </nav>
+
+        <!--navbar expandable sandwich-->
+        <nav class="navbar navbar-expand-lg bg-light shadow">
+            <section class="container-fluid align-items-center pb-2">
+                <div class="collapse navbar-collapse" id="navbarNavContent">
+                    <ul class="navbar-nav m-auto d-flex align-items-center navbar-list-orange fs-6 gap-2">
+                        <li class="nav-item">
+                            <a class="nav-link fw-medium" href="{% url 'index' %}">Início</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-medium" href="#">Disciplinas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-medium" href="#">Extensões</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-medium" href="#">Projetos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-medium" href="#">Notícias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-medium" href="#">Documentação</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-medium" href="#">Monitorias</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-medium" href="#">Atividades</a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </nav>
+    </header>
+
+    {% block page_header %}{% endblock %}
+
+
+    {% block content %}{% endblock content %}
+
+
+    <footer class="bg-white py-5 text-primary">
+        <section class="container">
+            <div class="row text-center text-lg-start justify-content-center">
+                <!-- Redes Sociais -->
+                <div class="col-12 col-lg-3 mb-4">
+                    <a class="navbar-brand d-flex align-items-center justify-content-center justify-content-lg-start mb-3" href="index.html">
+                        <img src={% static "./assets/logo.png" %} alt="Logo do site" class="img-fluid logo">
+                        <span class="fw-bold fs-4 ms-1">ADS</span>
+                    </a>
+
+                    <p class="text-gray">Quer conhecer mais sobre nosso cotidiano? Acesse nossas redes sociais.</p>
+
+                    <ul class="list-unstyled d-flex justify-content-center justify-content-lg-start btn-list-white-bg-orange">
+                        <li class="btn btn-gray me-2"><i class="bi bi-facebook"></i></li>
+                        <li class="btn btn-gray me-2"><i class="bi bi-twitter-x"></i></li>
+                        <li class="btn btn-gray me-2"><i class="bi bi-instagram"></i></li>
+                        <li class="btn btn-gray"><i class="bi bi-linkedin"></i></li>
+                    </ul>
+                </div>
+
+                <!-- Contate-nos -->
+                <div class="col-12 col-lg-3 mb-4">
+                    <h4 class="mb-3 fw-bold">Contate-nos</h4>
+                    <ul class="list-unstyled d-flex flex-column gap-3">
+                        <li><i class="bi bi-telephone-fill me-2"></i><span>(83) 3421-4047</span></li>
+                        <li><i class="bi bi-telephone-fill me-2"></i><span>(83) 3421-4047</span></li>
+                        <li><i class="bi bi-envelope-fill me-2"></i><span>coordenacao@ads.fiponline<br>.edu.br</span></li>
+                        <li><i class="bi bi-geo-alt-fill me-2"></i><span>Patos, Paraíba, Brasil - 58704-440</span></li>
+                    </ul>
+                </div>
+
+                <!-- Links -->
+                <div class="col-12 col-lg-3 mb-4">
+                    <h4 class="mb-3 fw-bold">Links</h4>
+                    <ul class="list-unstyled d-flex flex-column gap-3 links-list-orange">
+                        <li><i class="bi bi-arrow-right me-2"></i>Início</li>
+                        <li><i class="bi bi-arrow-right me-2"></i>Extensões</li>
+                        <li><i class="bi bi-arrow-right me-2"></i>Projetos</li>
+                        <li><i class="bi bi-arrow-right me-2"></i>Documentação</li>
+                        <li><i class="bi bi-arrow-right me-2"></i>Disciplinas</li>
+                        <li><i class="bi bi-arrow-right me-2"></i>Monitorias</li>
+                    </ul>
+                </div>
+
+                <!-- Notícias -->
+                <div class="col-12 col-lg-3 mb-4">
+                    <h4 class="mb-3 fw-bold">Notícias</h4>
+                    <p>Inscreva-se para receber as últimas atualizações</p>
+                    <form class="d-flex flex-wrap justify-content-center justify-content-lg-start gap-3" role="search">
+                        <input class="form-control w-75" type="search" placeholder="Seu email" aria-label="Buscar">
+                        <button class="btn btn-light btn-white-bg-orange border-primary w-50" type="submit">Inscreva-se</button>
+                    </form>
+                </div>
+            </div>
+
+            <!--créditos-->
+            <div class="border-top mt-3 d-flex justify-content-center fs-4 text-center">
+                <p class="mt-4">Criado pelos alunos de ADS | todos os direitos reservados!</p>
+            </div>
+        </section>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="{% static 'js/darkMode.js' %}"></script>
+</body>
+
+</html>

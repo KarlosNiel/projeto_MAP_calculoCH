@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Atividades Complementares{% endblock %}
+
+{% block page_header %}
+<section class="bg-title text-white text-center py-5 d-flex align-items-center justify-content-center flex-column">
+    <h1 class="fw-bold fs-0">ATIVIDADES COMPLEMENTARES</h1>
+    <div class="bg-orange p-1 my-3" style="width: 250px;"></div>
+</section>
+{% endblock %}
+
+{% block content %}
+<main class="bg-light py-5">
+    <div class="container">
+        <div class="row gx-5 gy-4">
+
+            <!-- COLUNA ESQUERDA: ATIVIDADES -->
+            <div class="col-lg-8">
+                <section class="card shadow-sm" aria-labelledby="atividadesIntroTitle">
+                    <div class="card-body text-center">
+                        <h2 id="atividadesIntroTitle" class="fw-bold text-primary mb-3">Validação de Atividades Complementares</h2>
+
+                        <p class="text-muted mb-2">
+                            Cursos, eventos, palestras e outras atividades extracurriculares podem ser validadas como parte da carga horária complementar obrigatória do curso.
+                        </p>
+                        <p class="text-muted mb-4">
+                            Para enviar e acompanhar suas atividades, é necessário estar autenticado na plataforma com seu usuário institucional.
+                        </p>
+
+                        <!-- Botão para regulamento -->
+                        <a href="{% static 'regulamento.pdf' %}" class="btn btn-outline-secondary mb-3" target="_blank" rel="noopener noreferrer" role="button" aria-label="Abrir regulamento de atividades complementares">
+                            📄 Ver Regulamento de Atividades
+                        </a><br>
+
+                        <!-- Botão de login -->
+                        <a href="{% url 'login' %}" class="btn btn-lg btn-primary px-4 py-2" role="button" aria-label="Acessar login para submissão de atividades">
+                            Fazer Login para Enviar Atividades
+                        </a>
+                    </div>
+                </section>
+            </div>
+
+            <!-- COLUNA DIREITA: UTILIDADES -->
+            <div class="col-lg-4">
+                <section aria-labelledby="utilsTitle">
+                    <h2 id="utilsTitle" class="fw-bold mb-3 text-primary">UTILIDADES</h2>
+                    <div class="card border-0 shadow-sm">
+                        <ul class="list-group list-group-flush text-center">
+                            <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">NOTÍCIAS</a></li>
+                            <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">REVISTA COOPEX</a></li>
+                            <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">DOWNLOADS</a></li>
+                            <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">BIBLIOTECA</a></li>
+                            <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">TRABALHE CONOSCO</a></li>
+                            <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">OUVIDORIA</a></li>
+                            <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">MATRÍCULA ACADÊMICA</a></li>
+                            <li class="list-group-item"><a href="#" class="text-decoration-none fw-bold text-primary">CALENDÁRIO ACADÊMICO</a></li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </div>
+</main>
+{% endblock %}
